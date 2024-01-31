@@ -31,20 +31,22 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    top: '0',
+    left: '0',
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     width: '100%',
     '& .MuiInputBase-input': {
-        padding: theme.spacing(1, 1, 1, 0),
+        padding: theme.spacing(1, 1, 1, 4),
         // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
         [theme.breakpoints.up('sm')]: {
             width: '12ch',
             '&:focus': {
-                width: '20ch',
+                width: '38ch',
             },
         },
     },
@@ -65,16 +67,20 @@ const Header = ({ setFilter }) => {
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                        sx={{ flexGrow: 1,
+                            display: { xs: 'none', sm: 'block' }, 
+                            borderRadius: '8px', 
+                            padding: '10px', 
+                            fontSize: '1.5rem'}}
                     >
-                        MUI
+                        GigConnectEcom
                     </Typography>
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
                         </SearchIconWrapper>
                         <StyledInputBase
-                            placeholder="Search…"
+                            placeholder="Search for Products,Brands and more"
                             inputProps={{ 'aria-label': 'search' }}
                             onChange={handleChange}
                         />

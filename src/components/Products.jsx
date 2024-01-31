@@ -13,7 +13,7 @@ const Products = ({ filter }) => {
     }
     return (
         <>
-            <h2>All Products</h2>
+            <h2 style={{ textAlign: 'center' }}>All Products</h2>
             <hr />
             <Grid container spacing={3} py={3}>
                 {filterProducts?.map((product) => (
